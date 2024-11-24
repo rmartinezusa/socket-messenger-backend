@@ -6,10 +6,6 @@ const prisma = new PrismaClient().$extends({
             async register(username, password) {
                 try {
                     const hashedPass = await bcrypt.hash(password, 10);
-
-                    console.log(username);
-                    console.log(password);
-
                     const user = await prisma.user.create({
                         data: { username, password: hashedPass },
                     });

@@ -5,8 +5,8 @@ POST {{host}}/register
 Content-Type: application/json
 
 {
-  "username": "bata",
-  "password": "123123"
+  "username": "123",
+  "password": "123"
 }
 
 ### 2. Login User
@@ -15,14 +15,24 @@ POST {{host}}/login
 Content-Type: application/json
 
 {
-  "username": "bata",
-  "password": "123123"
+  "username": "123",
+  "password": "123"
 }
 
 ### token 
 @token = {{login.response.body.token}}
 
-### 3. GET users 
+### 3. GET loged in user
+GET {{host}}/users/profile
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 4. GET users 
 GET {{host}}/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 4. GET user by ID 
+GET {{host}}/users/1
 Content-Type: application/json
 Authorization: Bearer {{token}}
