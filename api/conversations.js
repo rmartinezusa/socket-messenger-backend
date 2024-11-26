@@ -6,8 +6,24 @@ const { authenticate } = require("./auth");
 router.get("/", authenticate, async (req, res, next) => {
     try {
         const conversations = await prisma.conversation.findMany({
-            where: { id: req.user.id }
+            where: {
+                participants: {
+                    some: {
+                        id: req.user.id, 
+                    },
+                },
+            },
+            include: {
+                participants: {
+                    select: {
+                        id: true,
+                        username: true,
+                        name: true,
+                    },
+                },
+            },
         });
+
         res.status(200).json(conversations);
     } catch (e) {
         console.error(e);
