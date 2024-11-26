@@ -14,15 +14,10 @@ app.use(cors({ origin: /localhost/ }));
 app.use(require("morgan")("dev"));
 app.use(express.json());
 
+//Setup express middleware
 app.use(require("./api/auth").router);
 app.use("/users", require("./api/users"));
-
-//Setup express middleware
-
-//app.use("/interests", require("./api/interests"));
-//app.use("/activities", require("./api/activities"));
-//app.use("/chats", require("./api/chats"));
-//app.use("/messages", require("./api/messages"));
+app.use("/conversations", require("./api/conversations"));
 
 app.use((req, res, next) => {
   next({ status: 404, message: "Endpoint not found." });

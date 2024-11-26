@@ -32,7 +32,25 @@ GET {{host}}/users
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
-### 4. GET user by ID 
+### 5. GET user by ID 
 GET {{host}}/users/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 6. GET conversations by logdin user.
+GET {{host}}/conversations
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### 7. POST conversation 
+POST {{host}}/conversations
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "participantIds": [3, 4]
+}
+
+### 8. GET a specific conversation by ID
+GET {{host}}/conversations/1
 Authorization: Bearer {{token}}
