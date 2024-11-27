@@ -55,7 +55,7 @@ Authorization: Bearer {{token}}
 GET {{host}}/conversations/1
 Authorization: Bearer {{token}}
 
-### 9. POST 
+### 9. POST new message 
 POST {{host}}/messages/1
 Authorization: Bearer {{token}}
 Content-Type: application/json
