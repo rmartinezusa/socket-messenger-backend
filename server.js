@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(require("./api/auth").router);
 app.use("/users", require("./api/users"));
 app.use("/conversations", require("./api/conversations"));
+app.use("/messages", require("./api/messages"));
 
 app.use((req, res, next) => {
   next({ status: 404, message: "Endpoint not found." });
