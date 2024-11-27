@@ -86,7 +86,6 @@ router.post("/", authenticate, async (req, res, next) => {
         });
 
         res.status(201).json(newConversation);
-
     } catch (e) {
         console.error(e);
         next(e);
@@ -131,5 +130,3 @@ router.get("/:id", authenticate, async (req, res, next) => {
 });
 
 module.exports = router;
-
-

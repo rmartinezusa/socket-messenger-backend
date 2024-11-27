@@ -33,10 +33,7 @@ router.get("/", authenticate, async (req, res, next) => {
             }
         });
 
-
         res.status(200).json(users);
-
-
     } catch (e) {
         console.error(e);
         next(e)
