@@ -7,7 +7,7 @@ const initializeSocket = (server) => {
     const io = new Server(server, {
         cors: {
             // Restrict to specific client origin
-            origin: process.env.CLIENT_ORIGIN || "http://localhost:3000", 
+            origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", 
             methods: ["GET", "POST"],
         },
     });
