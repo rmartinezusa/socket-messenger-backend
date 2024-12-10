@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // API Routes
-app.use("/auth", require("./api/auth").router);
+app.use(require("./api/auth").router);
 app.use("/users", require("./api/users"));
 app.use("/conversations", require("./api/conversations"));
 app.use("/messages", require("./api/messages"));
